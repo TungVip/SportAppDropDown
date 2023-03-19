@@ -2,4 +2,8 @@
     <string name="app_name">TabFinal</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Bundesliga">Bundesliga</string>
+    <string name="premier_league">Premier League</string>
+    <string name="Laliga">La Liga</string>
+    <string name="serieA">Serie A</string>
 </resources>

@@ -8,12 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class PremierLeague extends Fragment {
+public class SerieA extends Fragment {
 
-    @Override
+   @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_premier_league, container, false);
+        return inflater.inflate(R.layout.fragment_serie_a, container, false);
     }
 }

@@ -3,16 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PremierLeague"
-    android:id="@+id/PL">
+    tools:context=".Bundesliga"
+    android:id="@+id/bundesliga">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="110dp"
-        android:padding="10dp"
-        android:text="@string/premier_league"
-        />
+        android:text="@string/Bundesliga"
+        android:gravity="center"/>
 
 </FrameLayout>

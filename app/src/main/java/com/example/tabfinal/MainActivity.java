@@ -3,6 +3,7 @@ package com.example.tabfinal;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
@@ -38,4 +39,9 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(vpAdapter);
 
     }
+    private void selectFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+    }
+
+
 }

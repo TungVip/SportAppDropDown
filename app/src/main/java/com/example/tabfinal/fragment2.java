@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
@@ -27,33 +28,42 @@ public class fragment2 extends Fragment implements CustomSpinner.OnSpinnerEvents
         spinnerLeague.setSpinnerEventsListener(this);
         adapter = new LeagueAdapter(this.getContext(), League.getLeague());
         spinnerLeague.setAdapter(adapter);
+        spinnerLeague.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i) {
+                    case 0:
+                        selectFragment(new PremierLeague());
+                        break;
+                    case 1:
+                        selectFragment(new Bundesliga());
+                        break;
+                    case 2:
+                        selectFragment(new LaLiga());
+                        break;
+                    case 3:
+                        selectFragment(new SerieA());
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         return view;
     }
 
-//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//
-//        switch (position) {
-//            case 0:
-//                fragmentTransaction.replace(R.id.fragment_container, new PremierLeagueFragment());
-//                break;
-//            case 1:
-//                fragmentTransaction.replace(R.id.fragment_container, new BundesligaFragment());
-//                break;
-//            case 2:
-//                fragmentTransaction.replace(R.id.fragment_container, new LaLigaFragment());
-//                break;
-//        }
-//
-//        fragmentTransaction.addToBackStack(null);
-//        fragmentTransaction.commit();
-//    }
+    private void selectFragment(Fragment fragment) {
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout, fragment);
+        fragmentTransaction.commit();
+    }
 
-//    @Override
-//    public void onNothingSelected(AdapterView<?> parent) {
-//        // Do nothing
-//    }
+
     @Override
     public void onPopupWindowOpened(Spinner spinner) {
         spinnerLeague.setBackground(getResources().getDrawable(R.drawable.league_custom_spinner_up));
