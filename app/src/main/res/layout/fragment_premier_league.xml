@@ -3,16 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PremierLeague"
+    tools:context=".League.PremierLeague"
+    android:layout_marginTop="120dp"
     android:id="@+id/PL">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPL"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
-        android:padding="10dp"
-        android:text="@string/premier_league"
-        />
+        tools:listitem="@layout/list_match"/>
 
 </FrameLayout>

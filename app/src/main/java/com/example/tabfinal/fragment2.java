@@ -2,23 +2,37 @@ package com.example.tabfinal;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
+import com.example.tabfinal.League.Bundesliga;
+import com.example.tabfinal.League.LaLiga;
+import com.example.tabfinal.League.PremierLeague;
+import com.example.tabfinal.League.SerieA;
 import com.example.tabfinal.ScrollLeague.League;
+
+import java.util.ArrayList;
 
 public class fragment2 extends Fragment implements CustomSpinner.OnSpinnerEventsListener{
     private CustomSpinner spinnerLeague;
     private LeagueAdapter adapter;
     private View view;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        selectFragment(new PremierLeague());
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -56,6 +70,9 @@ public class fragment2 extends Fragment implements CustomSpinner.OnSpinnerEvents
         return view;
     }
 
+
+
+
     private void selectFragment(Fragment fragment) {
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -73,4 +90,6 @@ public class fragment2 extends Fragment implements CustomSpinner.OnSpinnerEvents
     public void onPopupWindowClosed(Spinner spinner) {
         spinnerLeague.setBackground(getResources().getDrawable(R.drawable.league_custom_spinner));
     }
+
+
 }

@@ -6,4 +6,16 @@
     <string name="premier_league">Premier League</string>
     <string name="Laliga">La Liga</string>
     <string name="serieA">Serie A</string>
+    <string name="manchester_city">Manchester City</string>
+    <string name="manchester_united">Manchester United</string>
+    <string name="arsenal">Arsenal</string>
+    <string name="newcastle">NewCastleUnited</string>
+    <string name="liverpool">Liverpool</string>
+    <string name="brighton">Brighton</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
 </resources>
